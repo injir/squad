@@ -4,7 +4,22 @@
 
 #include "GameFramework/Character.h"
 #include "Hero.generated.h"
-
+// Структура для создании таблицы в TableData
+USTRUCT(Blueprintable)
+struct FHeroData : public FTableRowBase
+{
+	GENERATED_USTRUCT_BODY()
+public:
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Properties")
+		FString Name;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Properties")
+		UTexture2D * Icon;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Properties")
+		int32 type;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Properties")
+		USkeletalMesh * Mesh;
+};
+class ASquad;
 UCLASS()
 class SQUADMANAGER_API AHero : public ACharacter
 {
@@ -23,6 +38,13 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 
-	
+	int32 Id;
+	int32 Strength;
+	int32 Agility;
+	int32 Intelligence;
+	FString Name;
+	int32 Level;
+	float Health;
+	ASquad * appointedSquad = nullptr;
 	
 };

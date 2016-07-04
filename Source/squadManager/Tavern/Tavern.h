@@ -3,8 +3,10 @@
 #pragma once
 
 #include "GameFramework/Actor.h"
+
 #include "Tavern.generated.h"
 
+class ASquad;
 UCLASS()
 class SQUADMANAGER_API ATavern : public AActor
 {
@@ -19,7 +21,7 @@ public:
 	
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
-
+	TArray<ASquad*> SquadList;
 	
 	
 };

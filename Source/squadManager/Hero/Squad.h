@@ -5,6 +5,7 @@
 #include "GameFramework/Actor.h"
 #include "Squad.generated.h"
 
+class AHero;
 UCLASS()
 class SQUADMANAGER_API ASquad : public AActor
 {
@@ -20,6 +21,9 @@ public:
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
 
-	
+	TArray<AHero*> SquadMembers;
+	int32 MaxMembers;
+	FString Name;
+
 	
 };
