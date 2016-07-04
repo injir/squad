@@ -33,3 +33,43 @@ void AHero::SetupPlayerInputComponent(class UInputComponent* InputComponent)
 
 }
 
+
+void AHero::CalculateHealth()
+{
+}
+
+void AHero::SetHeroStatus(uint8 newStatus)
+{
+	HeroStatus = newStatus;
+}
+
+uint8 AHero::GetHeroStatus()
+{
+	return HeroStatus;
+}
+
+void AHero::SetHealthCondition(uint8 newCondition)
+{
+	HealthCondition = newCondition;
+}
+
+uint8 AHero::GetHealthCondition()
+{
+	return HealthCondition;
+}
+
+void AHero::AddNewPerk()
+{
+
+}
+
+void AHero::AddHeroToSquad()
+{
+}
+
+void AHero::QuitSquad()
+{
+}
+
+
+

@@ -38,13 +38,76 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* InputComponent) override;
 
+
+	enum EHeroStatus : uint8
+	{
+		HS_InSquad,
+		HS_InCamp,
+		HS_InTavern,
+		HS_Dead
+	};
+
+	enum EHealthCondition : uint8
+	{
+		HC_Healthy,
+		HC_Sick,
+		HC_Wounded,
+		HC_Dead
+	};
+
+
+	void CalculateHealth();
+
+	void SetHeroStatus(uint8 newStatus);
+
+	uint8 GetHeroStatus();
+
+	void SetHealthCondition(uint8 newCondition);
+
+	uint8 GetHealthCondition();
+
+	void AddNewPerk();
+
+	//void RemovePerk(APerk* Perk);
+
+	//TArray<APerk*> GetPerks();
+
+	void AddHeroToSquad();
+
+	void QuitSquad();
+
+private:
+
 	int32 Id;
-	int32 Strength;
+
+	int32 Strenght;
+
 	int32 Agility;
-	int32 Intelligence;
+
+	int32 Intellegence;
+
 	FString Name;
+
+	//Прозвище, которые герой может получить при определенном стечении обстоятельств ( увечье, получен редкий перк и т.д.)
+	FString Nickname;
+
 	int32 Level;
+
 	float Health;
-	ASquad * appointedSquad = nullptr;
+
+	class ASquad* AppointedSquad;
+
+	// Стоимость найма. Зависит от уровня, экипировки и перков.
+	float HirePrice;
+
+	float BasicPaymentPerWeek;
+
+	float PaymentPerWeek;
+
+	uint8 HeroStatus;
+
+	uint8 HealthCondition;
+
+	//TArray<APerks*> ArPerks;
 	
 };
