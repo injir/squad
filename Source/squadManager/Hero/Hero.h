@@ -3,6 +3,8 @@
 #pragma once
 
 #include "GameFramework/Character.h"
+#include "Item/Item.h"
+#include "squadManager.h"
 #include "Hero.generated.h"
 // Структура для создании таблицы в TableData
 USTRUCT(Blueprintable)
@@ -19,7 +21,6 @@ public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = "Properties")
 		USkeletalMesh * Mesh;
 };
-class ASquad;
 UCLASS()
 class SQUADMANAGER_API AHero : public ACharacter
 {
@@ -76,6 +77,12 @@ public:
 
 	void QuitSquad();
 
+	
+	AItem* GetEquipmentInSlot(EEquipmentEnum equipmentSlot);
+
+	void SetEquipmentToSlot(AItem* newItem, EEquipmentEnum equipmentSlot);
+
+
 private:
 
 	int32 Id;
@@ -109,5 +116,30 @@ private:
 	uint8 HealthCondition;
 
 	//TArray<APerks*> ArPerks;
+
+	// EQUIPMENT
+
+	class AItem* Head;
+	class AItem* Arms;
+	class AItem* Body;
+	class AItem* Legs;
+	class AItem* Boots;
+	class AItem* FingerOne;
+	class AItem* FingerTwo;
+	class AItem* Neck;
+	class AItem* RirghtHand;
+	class AItem* LeftHand;
+
+	EEquipmentEnum HeadSlotType = EEquipmentEnum::EE_Head;
+	EEquipmentEnum ArmsSlotType = EEquipmentEnum::EE_Arms;
+	EEquipmentEnum BodySlotType = EEquipmentEnum::EE_Body;
+	EEquipmentEnum LegsSlotType = EEquipmentEnum::EE_Legs;
+	EEquipmentEnum BootsSlotType = EEquipmentEnum::EE_Boots;
+	EEquipmentEnum FingerOneSlotType = EEquipmentEnum::EE_FingerOne;
+	EEquipmentEnum FingerTwoSlotType = EEquipmentEnum::EE_FingerTwo;
+	EEquipmentEnum NeckSlotType = EEquipmentEnum::EE_Neck;
+	EEquipmentEnum RightHandSlotType = EEquipmentEnum::EE_RightHand;
+	EEquipmentEnum LeftHandSlotType = EEquipmentEnum::EE_LeftHand;
+
 	
 };

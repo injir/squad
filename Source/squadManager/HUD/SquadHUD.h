@@ -13,6 +13,12 @@ class SQUADMANAGER_API ASquadHUD : public AHUD
 {
 	GENERATED_BODY()
 	
+public:
+
+	ASquadHUD();
+
+	virtual void DrawHUD() override;
+
 	
 	
 	

@@ -71,5 +71,17 @@ void AHero::QuitSquad()
 {
 }
 
+AItem * AHero::GetEquipmentInSlot(EEquipmentEnum equipmentSlot)
+{
+	return nullptr;
+}
+
+void AHero::SetEquipmentToSlot(AItem * newItem, EEquipmentEnum equipmentSlot)
+{
+
+}
+
+
+
 
 

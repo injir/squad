@@ -3,6 +3,12 @@
 #include "squadManager.h"
 #include "SquadHUD.h"
 
+ASquadHUD::ASquadHUD()
+{
 
+}
 
-
+void ASquadHUD::DrawHUD()
+{
+	Super::DrawHUD();
+}
