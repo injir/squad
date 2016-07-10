@@ -81,6 +81,18 @@ void AHero::SetEquipmentToSlot(AItem * newItem, EEquipmentEnum equipmentSlot)
 
 }
 
+void AHero::TryToKill()
+{
+}
+
+void AHero::Disable()
+{
+}
+
+void AHero::Kill()
+{
+}
+
 
 
 
