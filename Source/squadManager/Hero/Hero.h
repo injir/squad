@@ -82,6 +82,13 @@ public:
 
 	void SetEquipmentToSlot(AItem* newItem, EEquipmentEnum equipmentSlot);
 
+	// ѕытаемс€ убить персонажа. ѕровр€ем, можно ли вообще убить его в данном квесте. “акже учитываем, нет ли какого-либо перка, дающего 1 раз спаститсь от смертельного удара. ѕосле по шансам рассчитываем, будет ли персонаж вырублен или убит.
+	void TryToKill();
+
+	void Disable();
+
+	void Kill();
+
 
 private:
 
@@ -92,6 +99,15 @@ private:
 	int32 Agility;
 
 	int32 Intellegence;
+
+	float MinDamage;
+	float MaxDamage;
+
+	float CritChance;
+	float CritMultiplier;
+
+	float ArmorRate;
+	float DodgeChance;
 
 	FString Name;
 
@@ -141,5 +157,6 @@ private:
 	EEquipmentEnum RightHandSlotType = EEquipmentEnum::EE_RightHand;
 	EEquipmentEnum LeftHandSlotType = EEquipmentEnum::EE_LeftHand;
 
-	
+	bool bIsDead;
+	bool bIsDisabled;
 };
