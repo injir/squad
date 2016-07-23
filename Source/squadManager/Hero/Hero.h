@@ -90,7 +90,7 @@ public:
 	void Kill();
 
 
-private:
+protected:
 
 	int32 Id;
 
@@ -159,4 +159,6 @@ private:
 
 	bool bIsDead;
 	bool bIsDisabled;
+
+	
 };

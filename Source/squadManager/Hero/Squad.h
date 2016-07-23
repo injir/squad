@@ -20,10 +20,20 @@ public:
 	
 	// Called every frame
 	virtual void Tick( float DeltaSeconds ) override;
+protected:
 
 	TArray<AHero*> SquadMembers;
 	int32 MaxMembers;
 	FString Name;
+	
+
+public:
+	UFUNCTION(BlueprintCallable, Category = "Squad")
+		TArray<AHero*> GetHeroCollection();
+	UFUNCTION(BlueprintCallable, Category = "Squad")
+		TArray<AHero*> GetMembersFromSquad();
+	UFUNCTION(BlueprintCallable, Category = "Squad")
+		AHero* GetMember(int32 id);
 
 	
 };

@@ -26,3 +26,12 @@ void ASquad::Tick( float DeltaTime )
 
 }
 
+TArray<AHero*>  ASquad::GetHeroCollection(){
+	return this->SquadMembers;
+}
+TArray<AHero*> ASquad::GetMembersFromSquad() {
+	return this->SquadMembers;
+}
+AHero* ASquad::GetMember(int32 id) {
+	return nullptr;
+}

@@ -12,8 +12,12 @@ UCLASS()
 class SQUADMANAGER_API ASquadPlayerController : public APlayerController
 {
 	GENERATED_BODY()
-	
-	
-	
+	ASquadPlayerController();
+protected:
+	//Data Table Hero
+	UDataTable * HeroData = nullptr;
+public:
+	UFUNCTION(BlueprintCallable, Category = "DataTable")
+	UDataTable * GetHeroData();
 	
 };
